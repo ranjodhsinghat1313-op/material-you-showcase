@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Seed Picker Dropdown */}
             {paletteOpen && (
               <div
-                className="absolute right-0 mt-2 w-72 p-4 rounded-3xl shadow-xl border z-50 animate-in fade-in zoom-in-95 duration-200"
+                className="absolute right-0 mt-2 w-[calc(100vw-2rem)] max-w-xs sm:w-72 p-4 rounded-3xl shadow-xl border z-50 animate-in fade-in zoom-in-95 duration-200"
                 style={{
                   backgroundColor: roles.surfaceContainer,
                   borderColor: `${roles.outline}30`,
@@ -153,9 +153,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </div>
                   <button
                     onClick={() => setPaletteOpen(false)}
-                    className="p-1 rounded-full hover:bg-black/5 dark:hover:bg-white/10"
+                    className="p-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 min-w-[32px] min-h-[32px] flex items-center justify-center"
+                    aria-label="Close seed picker"
                   >
-                    <X className="w-3.5 h-3.5" />
+                    <X className="w-4 h-4" />
                   </button>
                 </div>
                 <p className="text-xs mb-3 leading-relaxed" style={{ color: roles.onSurfaceVariant }}>
@@ -173,7 +174,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                           onSelectSeed(preset);
                           setPaletteOpen(false);
                         }}
-                        className="flex items-center justify-between px-3 py-2 rounded-2xl text-left text-xs font-medium transition-all"
+                        className="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-left text-xs font-medium transition-all md-tap"
                         style={{
                           backgroundColor: isSelected ? roles.secondaryContainer : 'transparent',
                           color: isSelected ? roles.onSecondaryContainer : roles.onSurface,
@@ -202,14 +203,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                       type="color"
                       value={customHex}
                       onChange={(e) => onChangeCustomHex(e.target.value)}
-                      className="w-7 h-7 rounded-lg cursor-pointer border-0 bg-transparent p-0"
+                      className="w-8 h-8 rounded-lg cursor-pointer border-0 bg-transparent p-0"
                     />
                     <input
                       type="text"
                       value={customHex}
                       onChange={(e) => onChangeCustomHex(e.target.value)}
                       placeholder="#6750A4"
-                      className="w-20 px-2 py-1 text-xs rounded-lg border font-mono uppercase text-center"
+                      className="w-20 px-2 py-1.5 text-xs rounded-lg border font-mono uppercase text-center"
                       style={{
                         backgroundColor: roles.surfaceContainerLow,
                         borderColor: roles.outline,
@@ -257,6 +258,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               backgroundColor: roles.surfaceContainerLow,
               color: roles.onSurface,
             }}
+            aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -266,13 +268,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div
-          className="lg:hidden mt-3 pt-3 border-t flex flex-col gap-2 pb-2"
+          className="lg:hidden mt-3 pt-3 border-t flex flex-col gap-1.5 pb-2 animate-in fade-in slide-in-from-bottom-3 duration-200"
           style={{ borderColor: `${roles.outline}20` }}
         >
           <a
             href="#principles"
             onClick={() => setMobileMenuOpen(false)}
-            className="px-3 py-2 rounded-xl text-sm font-medium"
+            className="px-4 py-2.5 rounded-2xl text-sm font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/5 active:scale-98"
             style={{ color: roles.onSurface }}
           >
             Principles
@@ -280,7 +282,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a
             href="#components"
             onClick={() => setMobileMenuOpen(false)}
-            className="px-3 py-2 rounded-xl text-sm font-medium"
+            className="px-4 py-2.5 rounded-2xl text-sm font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/5 active:scale-98"
             style={{ color: roles.onSurface }}
           >
             Components
@@ -288,7 +290,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a
             href="#tonal-palettes"
             onClick={() => setMobileMenuOpen(false)}
-            className="px-3 py-2 rounded-xl text-sm font-medium"
+            className="px-4 py-2.5 rounded-2xl text-sm font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/5 active:scale-98"
             style={{ color: roles.onSurface }}
           >
             Tonal Palettes
@@ -296,7 +298,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a
             href="#playground"
             onClick={() => setMobileMenuOpen(false)}
-            className="px-3 py-2 rounded-xl text-sm font-medium"
+            className="px-4 py-2.5 rounded-2xl text-sm font-medium transition-colors hover:bg-black/5 dark:hover:bg-white/5 active:scale-98"
             style={{ color: roles.onSurface }}
           >
             Live App Demo

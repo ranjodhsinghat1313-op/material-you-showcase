@@ -131,14 +131,14 @@ export const TonalPaletteViewer: React.FC<TonalPaletteViewerProps> = ({
 
           {/* Active Inspector Pill */}
           <div
-            className="p-4 rounded-3xl border shadow-sm flex items-center gap-4 flex-shrink-0"
+            className="p-4 rounded-3xl border shadow-sm flex items-center gap-4 w-full sm:w-auto flex-shrink-0"
             style={{
               backgroundColor: roles.surfaceContainer,
               borderColor: `${roles.outline}30`,
             }}
           >
             <div
-              className="w-12 h-12 rounded-2xl shadow-inner flex items-center justify-center font-bold text-xs border"
+              className="w-12 h-12 rounded-2xl shadow-inner flex items-center justify-center font-bold text-xs border flex-shrink-0"
               style={{
                 backgroundColor: activeToneInfo.hex,
                 borderColor: `${roles.outline}40`,
@@ -147,7 +147,7 @@ export const TonalPaletteViewer: React.FC<TonalPaletteViewerProps> = ({
             >
               T{activeToneInfo.tone}
             </div>
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="text-xs font-semibold uppercase tracking-wider opacity-70">
                 {activeToneInfo.paletteName}
               </div>
@@ -157,17 +157,18 @@ export const TonalPaletteViewer: React.FC<TonalPaletteViewerProps> = ({
                 </span>
                 <button
                   onClick={() => handleCopy(activeToneInfo.hex)}
-                  className="p-1 rounded-md hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+                  className="p-1.5 rounded-md hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
                   title="Copy Hex"
+                  aria-label="Copy hex code"
                 >
                   {copiedHex === activeToneInfo.hex ? (
-                    <Check className="w-3.5 h-3.5 text-green-600" />
+                    <Check className="w-4 h-4 text-green-600" />
                   ) : (
-                    <Copy className="w-3.5 h-3.5 opacity-60" />
+                    <Copy className="w-4 h-4 opacity-60" />
                   )}
                 </button>
               </div>
-              <div className="text-[11px] truncate max-w-[200px]" style={{ color: roles.onSurfaceVariant }}>
+              <div className="text-[11px] truncate max-w-[220px]" style={{ color: roles.onSurfaceVariant }}>
                 {activeToneInfo.roleNote || `Tone ${activeToneInfo.tone}`}
               </div>
             </div>
@@ -176,7 +177,7 @@ export const TonalPaletteViewer: React.FC<TonalPaletteViewerProps> = ({
 
         {/* Tonal Spectrum Strips */}
         <div
-          className="rounded-[32px] md:rounded-[40px] p-6 md:p-10 border shadow-xl space-y-8"
+          className="rounded-[28px] sm:rounded-[32px] md:rounded-[40px] p-4 sm:p-6 md:p-10 border shadow-xl space-y-8"
           style={{
             backgroundColor: roles.surfaceContainerLow,
             borderColor: `${roles.outline}25`,
@@ -184,15 +185,18 @@ export const TonalPaletteViewer: React.FC<TonalPaletteViewerProps> = ({
         >
           {paletteList.map(({ key, label, pal }) => (
             <div key={key} className="space-y-2">
-              <div className="flex items-center justify-between text-xs font-semibold">
-                <span style={{ color: roles.onSurface }}>{label}</span>
-                <span className="font-mono opacity-60 text-[11px] uppercase">
-                  Seed: {pal.keyColor}
-                </span>
+              <div className="flex items-center justify-between text-xs font-semibold gap-2">
+                <span className="truncate" style={{ color: roles.onSurface }}>{label}</span>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <span className="md:hidden text-[10px] font-normal opacity-60">← Scroll →</span>
+                  <span className="font-mono opacity-60 text-[11px] uppercase">
+                    {pal.keyColor}
+                  </span>
+                </div>
               </div>
 
               {/* 13 tone blocks */}
-              <div className="overflow-x-auto pb-1 -mx-1 px-1">
+              <div className="overflow-x-auto pb-2 -mx-2 px-2 sm:mx-0 sm:px-0 scrollbar-none">
                 <div
                   className="grid grid-cols-13 gap-1 md:gap-1.5 rounded-2xl p-1.5 border min-w-[560px] md:min-w-0"
                   style={{

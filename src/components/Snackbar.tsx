@@ -12,7 +12,7 @@ export const Snackbar: React.FC<SnackbarProps> = ({ message, onDismiss, roles })
   if (!message) return null;
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-4 w-full max-w-md pointer-events-none">
+    <div className="fixed bottom-22 sm:bottom-8 left-0 right-0 sm:left-1/2 sm:-translate-x-1/2 z-50 px-4 w-full sm:max-w-md pointer-events-none mx-auto">
       <div
         className="pointer-events-auto flex items-center justify-between gap-3 px-4 py-3 rounded-2xl shadow-2xl border text-xs font-medium animate-in fade-in slide-in-from-bottom-5 duration-300"
         style={{

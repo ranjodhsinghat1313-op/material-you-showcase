@@ -137,19 +137,19 @@ export const InteractiveAppDemo: React.FC<InteractiveAppDemoProps> = ({
 
         {/* Mock Device / App Frame */}
         <div
-          className="max-w-3xl mx-auto rounded-[36px] md:rounded-[48px] p-6 md:p-10 border shadow-2xl transition-all"
+          className="max-w-3xl mx-auto rounded-[28px] sm:rounded-[36px] md:rounded-[48px] p-4 sm:p-6 md:p-10 border shadow-2xl transition-all"
           style={{
             backgroundColor: roles.surface,
             borderColor: `${roles.outline}30`,
           }}
         >
           {/* App Top Bar */}
-          <div className="flex items-center justify-between pb-6 border-b"
+          <div className="flex items-center justify-between pb-5 sm:pb-6 border-b"
             style={{ borderColor: `${roles.outline}20` }}
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5 sm:gap-3">
               <div
-                className="w-11 h-11 rounded-2xl flex items-center justify-center font-bold text-sm shadow-sm"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center font-bold text-sm shadow-sm flex-shrink-0"
                 style={{
                   backgroundColor: roles.primary,
                   color: roles.onPrimary,
@@ -158,10 +158,10 @@ export const InteractiveAppDemo: React.FC<InteractiveAppDemoProps> = ({
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-lg font-bold" style={{ color: roles.onSurface }}>
+                <h3 className="text-base sm:text-lg font-bold" style={{ color: roles.onSurface }}>
                   Daily Horizon
                 </h3>
-                <span className="text-xs flex items-center gap-1" style={{ color: roles.onSurfaceVariant }}>
+                <span className="text-[11px] sm:text-xs flex items-center gap-1" style={{ color: roles.onSurfaceVariant }}>
                   <Calendar className="w-3 h-3" />
                   Live Reactive State
                 </span>
@@ -170,19 +170,19 @@ export const InteractiveAppDemo: React.FC<InteractiveAppDemoProps> = ({
 
             <div className="flex items-center gap-2">
               <span
-                className="text-xs px-3 py-1 rounded-full font-medium"
+                className="text-[11px] sm:text-xs px-2.5 py-1 rounded-full font-medium"
                 style={{
                   backgroundColor: roles.tertiaryContainer,
                   color: roles.onTertiaryContainer,
                 }}
               >
-                {items.filter(i => i.completed).length}/{items.length} Completed
+                {items.filter(i => i.completed).length}/{items.length} Done
               </span>
             </div>
           </div>
 
           {/* Quick Input Form */}
-          <form onSubmit={handleAddItem} className="mt-6 space-y-4">
+          <form onSubmit={handleAddItem} className="mt-5 sm:mt-6 space-y-4">
             <div className="flex flex-col sm:flex-row gap-2">
               <div className="relative flex-1 group">
                 <input
@@ -190,7 +190,7 @@ export const InteractiveAppDemo: React.FC<InteractiveAppDemoProps> = ({
                   value={inputTitle}
                   onChange={(e) => setInputTitle(e.target.value)}
                   placeholder=" "
-                  className="w-full h-14 px-4 pt-4 pb-1 rounded-t-xl text-sm font-medium border-b-2 outline-none transition-colors peer"
+                  className="w-full h-14 px-4 pt-4 pb-1 rounded-t-xl text-base sm:text-sm font-medium border-b-2 outline-none transition-colors peer"
                   style={{
                     backgroundColor: roles.surfaceContainerLow,
                     borderColor: roles.outline,
@@ -215,7 +215,7 @@ export const InteractiveAppDemo: React.FC<InteractiveAppDemoProps> = ({
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value as any)}
-                  className="h-14 px-4 rounded-xl text-xs font-semibold border outline-none cursor-pointer"
+                  className="h-14 px-3 sm:px-4 rounded-xl text-xs font-semibold border outline-none cursor-pointer flex-1 sm:flex-none"
                   style={{
                     backgroundColor: roles.surfaceContainerLow,
                     borderColor: `${roles.outline}40`,
@@ -229,7 +229,7 @@ export const InteractiveAppDemo: React.FC<InteractiveAppDemoProps> = ({
 
                 <button
                   type="submit"
-                  className="h-14 px-6 rounded-full font-medium text-sm flex items-center justify-center gap-1.5 md-tap shadow-sm md-state-layer"
+                  className="h-14 px-5 sm:px-6 rounded-full font-medium text-sm flex items-center justify-center gap-1.5 md-tap shadow-sm md-state-layer flex-shrink-0"
                   style={{
                     backgroundColor: roles.primary,
                     color: roles.onPrimary,
@@ -242,8 +242,8 @@ export const InteractiveAppDemo: React.FC<InteractiveAppDemoProps> = ({
             </div>
 
             {/* Category Filter Chips */}
-            <div className="flex items-center gap-2 pt-2 overflow-x-auto pb-1">
-              <span className="text-xs font-medium mr-1" style={{ color: roles.onSurfaceVariant }}>
+            <div className="flex items-center gap-2 pt-1 overflow-x-auto pb-1.5 -mx-1 px-1 scrollbar-none">
+              <span className="text-xs font-medium mr-1 flex-shrink-0" style={{ color: roles.onSurfaceVariant }}>
                 Filter:
               </span>
               {['All', 'Design', 'System', 'Inspiration'].map((cat) => {

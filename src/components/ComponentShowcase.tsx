@@ -71,20 +71,20 @@ export const ComponentShowcase: React.FC<ComponentShowcaseProps> = ({
           </p>
 
           {/* Segmented Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2 mt-6 sm:mt-8 w-full max-w-xl mx-auto">
             {(['buttons', 'cards', 'inputs', 'controls'] as const).map((tab) => {
               const isSelected = activeTab === tab;
               const labels = {
                 buttons: 'Buttons & FABs',
                 cards: 'Surface Cards',
-                inputs: 'Filled & Outlined Inputs',
+                inputs: 'Filled & Outlined',
                 controls: 'Switches & Chips',
               };
               return (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className="px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium md-tap border transition-all"
+                  className="px-3.5 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium md-tap border transition-all text-center"
                   style={{
                     backgroundColor: isSelected ? roles.primary : roles.surfaceContainerLow,
                     color: isSelected ? roles.onPrimary : roles.onSurface,
@@ -101,7 +101,7 @@ export const ComponentShowcase: React.FC<ComponentShowcaseProps> = ({
         {/* 1. BUTTONS & FABS */}
         {activeTab === 'buttons' && (
           <div
-            className="rounded-[32px] md:rounded-[40px] p-6 md:p-12 border shadow-lg space-y-12"
+            className="rounded-[28px] sm:rounded-[32px] md:rounded-[40px] p-4 sm:p-7 md:p-12 border shadow-lg space-y-8 sm:space-y-12"
             style={{
               backgroundColor: roles.surfaceContainerLow,
               borderColor: `${roles.outline}25`,
@@ -411,7 +411,7 @@ export const ComponentShowcase: React.FC<ComponentShowcaseProps> = ({
                   value={filledInputText}
                   onChange={(e) => setFilledInputText(e.target.value)}
                   placeholder=" "
-                  className="w-full h-15 px-4 pt-5 pb-1 rounded-t-xl text-sm font-medium border-b-2 outline-none transition-colors peer"
+                  className="w-full h-15 px-4 pt-5 pb-1 rounded-t-xl text-base sm:text-sm font-medium border-b-2 outline-none transition-colors peer"
                   style={{
                     backgroundColor: roles.surfaceContainerHighest,
                     borderColor: roles.outline,
@@ -445,7 +445,7 @@ export const ComponentShowcase: React.FC<ComponentShowcaseProps> = ({
                   onFocus={() => setIsOutlinedFocused(true)}
                   onBlur={() => setIsOutlinedFocused(false)}
                   placeholder=" "
-                  className="w-full h-14 px-4 rounded-xl text-sm font-medium border-2 outline-none bg-transparent transition-all duration-200"
+                  className="w-full h-14 px-4 rounded-xl text-base sm:text-sm font-medium border-2 outline-none bg-transparent transition-all duration-200"
                   style={{
                     borderColor: isOutlinedFocused ? roles.primary : roles.outline,
                     boxShadow: isOutlinedFocused ? `0 0 0 1px ${roles.primary}` : 'none',
