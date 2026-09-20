@@ -1,0 +1,6 @@
+{
+  "name": "Material You Showcase",
+  "description": "Interactive Material Design 3 (Material You) website showcasing tonal palettes, dynamic elevation, atmospheric styling, and MD3 component primitives.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
