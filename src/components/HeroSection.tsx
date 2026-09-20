@@ -67,7 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Heading */}
           <h1
-            className="text-3.5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-5 sm:mb-6 leading-[1.1]"
+            className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.08]"
             style={{ color: roles.onSurface }}
           >
             Design that feels <br />
@@ -95,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Subtitle */}
           <p
-            className="text-sm sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal"
+            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
             style={{ color: roles.onSurfaceVariant }}
           >
             A high-fidelity implementation of Google’s <strong>Material Design 3</strong>.
@@ -104,11 +104,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </p>
 
           {/* CTA Button Row */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <button
               id="hero-explore-btn"
               onClick={onExploreClick}
-              className="w-full sm:w-auto h-12 sm:h-14 px-7 sm:px-10 rounded-full font-medium text-base sm:text-lg flex items-center justify-center gap-2.5 md-tap shadow-lg hover:shadow-xl transition-all"
+              className="w-full sm:w-auto h-13 sm:h-14 px-8 sm:px-10 rounded-full font-medium text-base sm:text-lg flex items-center justify-center gap-2.5 md-tap shadow-lg hover:shadow-xl transition-all"
               style={{
                 backgroundColor: roles.primary,
                 color: roles.onPrimary,
@@ -121,7 +121,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <a
               id="hero-tonal-btn"
               href="#tonal-palettes"
-              className="w-full sm:w-auto h-12 sm:h-14 px-7 sm:px-10 rounded-full font-medium text-base sm:text-lg flex items-center justify-center gap-2 md-tap border-2 transition-all hover:bg-black/5 dark:hover:bg-white/5"
+              className="w-full sm:w-auto h-13 sm:h-14 px-8 sm:px-10 rounded-full font-medium text-base sm:text-lg flex items-center justify-center gap-2 md-tap border-2 transition-all hover:bg-black/5 dark:hover:bg-white/5"
               style={{
                 borderColor: roles.outline,
                 color: roles.primary,
@@ -134,7 +134,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Live Interactive MD3 Hero Preview Bento Card */}
         <div
-          className="rounded-[28px] sm:rounded-[32px] md:rounded-[40px] p-5 sm:p-7 md:p-10 shadow-xl border transition-all duration-300"
+          className="rounded-[32px] md:rounded-[40px] p-6 md:p-10 shadow-xl border transition-all duration-300"
           style={{
             backgroundColor: roles.surfaceContainer,
             borderColor: `${roles.outline}30`,

@@ -27,9 +27,9 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
   };
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 px-4 md:px-8 mb-8 sm:mb-12">
+    <section className="py-20 md:py-24 px-4 md:px-8 mb-12">
       <div
-        className="max-w-4xl mx-auto rounded-[28px] sm:rounded-[36px] md:rounded-[48px] p-6 sm:p-10 md:p-16 text-center relative overflow-hidden border shadow-xl transition-all"
+        className="max-w-4xl mx-auto rounded-[36px] md:rounded-[48px] p-8 md:p-16 text-center relative overflow-hidden border shadow-xl transition-all"
         style={{
           backgroundColor: roles.surfaceContainerLow,
           borderColor: `${roles.outline}25`,
@@ -63,23 +63,23 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
             MD3 Input Pattern
           </div>
 
-          <h2 className="text-2.5xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3 sm:mb-4" style={{ color: roles.onSurface }}>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4" style={{ color: roles.onSurface }}>
             Stay in the loop
           </h2>
-          <p className="text-sm md:text-base mb-6 sm:mb-8 leading-relaxed" style={{ color: roles.onSurfaceVariant }}>
+          <p className="text-sm md:text-base mb-8 leading-relaxed" style={{ color: roles.onSurfaceVariant }}>
             Get the latest Material Design 3 specifications, token mappings, and component updates delivered straight to your inbox.
           </p>
 
           {subscribed ? (
             <div
-              className="p-5 sm:p-6 rounded-3xl border flex items-center justify-center gap-3 animate-in fade-in"
+              className="p-6 rounded-3xl border flex items-center justify-center gap-3 animate-in fade-in"
               style={{
                 backgroundColor: roles.surfaceContainer,
                 borderColor: `${roles.outline}30`,
                 color: roles.onSurface,
               }}
             >
-              <CheckCircle2 className="w-6 h-6 flex-shrink-0" style={{ color: roles.primary }} />
+              <CheckCircle2 className="w-6 h-6" style={{ color: roles.primary }} />
               <div className="text-left">
                 <div className="font-bold text-sm">You are subscribed!</div>
                 <div className="text-xs opacity-80">We sent a welcome token package to {email}.</div>
@@ -95,7 +95,7 @@ export const NewsletterSection: React.FC<NewsletterSectionProps> = ({
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder=" "
                   required
-                  className="w-full h-15 sm:h-16 px-5 sm:px-6 pt-5 pb-1 rounded-t-xl text-base sm:text-sm font-medium border-b-2 outline-none transition-colors peer"
+                  className="w-full h-16 px-6 pt-5 pb-1 rounded-t-xl text-sm font-medium border-b-2 outline-none transition-colors peer"
                   style={{
                     backgroundColor: roles.surfaceContainer,
                     borderColor: roles.outline,
